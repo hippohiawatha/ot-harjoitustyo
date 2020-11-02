@@ -1,0 +1,211 @@
+$ git log --stat
+commit ffb54d1da8d47ab53135fab86dcb9d928e091063 (HEAD -> master)
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:19:30 2020 +0200
+
+    renamed file2
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b1aefca69070cf2b2680aef046d34be26693dc50
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:13:26 2020 +0200
+
+    added tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 132fe177734a60eaa8d41a6ce54718a14ff1510c
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:09:22 2020 +0200
+
+    patch commit
+
+ eka.txt    | 1 -
+ kolmas.txt | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit 2bd2ffe394f47b3208e378415d6867cec84e44d1
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:05:46 2020 +0200
+
+    renamed
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 46d937b9a71044f63bbcadd6a2a95a64970dd3ff
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:03:57 2020 +0200
+
+    removed toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit e98714edd9ac57c0347d0cb0a4cf21d1aacb5b66
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:00:59 2020 +0200
+
+    modified tiedosto.txt
+
+ tiedosto.txt | 100 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 100 insertions(+)
+
+commit 415c15fe81041eb0dda7734b108f84f97aca7a7f
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:12:56 2020 +0200
+
+    added stuff/
+
+ stuff/random.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0f7177083dd504e710ed3dff011b4b56b30a6596
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:11:27 2020 +0200
+set mark: ...skipping...
+commit ffb54d1da8d47ab53135fab86dcb9d928e091063 (HEAD -> master)
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:19:30 2020 +0200
+
+    renamed file2
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b1aefca69070cf2b2680aef046d34be26693dc50
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:13:26 2020 +0200
+
+    added tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 132fe177734a60eaa8d41a6ce54718a14ff1510c
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:09:22 2020 +0200
+
+    patch commit
+
+ eka.txt    | 1 -
+ kolmas.txt | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit 2bd2ffe394f47b3208e378415d6867cec84e44d1
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:05:46 2020 +0200
+commit ffb54d1da8d47ab53135fab86dcb9d928e091063 (HEAD -> master)
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:19:30 2020 +0200
+
+    renamed file2
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b1aefca69070cf2b2680aef046d34be26693dc50
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:13:26 2020 +0200
+
+    added tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 132fe177734a60eaa8d41a6ce54718a14ff1510c
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:09:22 2020 +0200
+
+    patch commit
+
+ eka.txt    | 1 -
+ kolmas.txt | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit 2bd2ffe394f47b3208e378415d6867cec84e44d1
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:05:46 2020 +0200
+Date:   Mon Nov 2 13:05:46 2020 +0200
+
+    renamed
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 46d937b9a71044f63bbcadd6a2a95a64970dd3ff
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:03:57 2020 +0200
+
+    removed toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit e98714edd9ac57c0347d0cb0a4cf21d1aacb5b66
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 13:00:59 2020 +0200
+
+    modified tiedosto.txt
+
+ tiedosto.txt | 100 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 100 insertions(+)
+
+commit 415c15fe81041eb0dda7734b108f84f97aca7a7f
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:12:56 2020 +0200
+
+    added stuff/
+
+ stuff/random.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0f7177083dd504e710ed3dff011b4b56b30a6596
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:11:27 2020 +0200
+
+    modified 2nd and 3rd
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 1d90da0727c77c8772fc8c9c45d72e8fc5b12456
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:10:08 2020 +0200
+
+    added third
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 15ad0a175ca383a93fda32aa8ed15d5aca175487
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:07:03 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 0827f0c8443f9841dbcac37513a958d3e1279a24
+Author: Leo Tavaila <leo.tavaila@helsinki.fi>
+Date:   Mon Nov 2 12:04:25 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
