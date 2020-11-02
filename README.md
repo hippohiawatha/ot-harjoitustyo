@@ -1,8 +1,8 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-### Tehtävät
+## Tehtävät
 
-###### Viikko 1
+### Viikko 1
 
 [komentorivi.txt](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
