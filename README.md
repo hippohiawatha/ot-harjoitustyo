@@ -4,8 +4,8 @@
 
 ### Dokumentaatio
 
-[työaikakirjanpito](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
-[vaatimusmäärittely}(https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[työaikakirjanpito](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[vaatimusmäärittely](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 ### Viikko 1
 
