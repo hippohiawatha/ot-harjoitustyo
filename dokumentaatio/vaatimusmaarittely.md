@@ -2,21 +2,19 @@
 
 ## Sovelluksen tarkoitus
 
-Ajatuksena tehdä simppeli klikkailupeli, jossa joka viides, 25. ja 100. klikkaus voittaa.  
-Käytännössä siis uhkapeli, mutta toki vain pisteillä, jotka eivät edusta oikeaa rahaa.
-
+Uudistunut ajatus!
+Ohjelmasta tulee kaikille tuttu kolmella rivillä pelattava hedelmäpeli. 
 
 ## Käyttäjät
 
-Alkuun ei ole kuin tavallisia käyttäjiä, eli pelaajia.  
-Mahdollisia lisärooleja sovelluksen kehittyessä.  
-Pelaaja voi suorittaa seuraavia toimintoja:
-* Omien pisteiden resettaaminen
-* Pelaaminen, eli nappulan painaminen
-* Odottaa jännityksellä, oliko oma painallus pisteiden arvoinen
+Pelissä ei ole muuta kuin "normaaleja" käyttäjiä.
+Käyttäjän painaessa pyöräytysnappulaa, arpoo peli kolmelle riville satunnaiset arvot. 
+Alussa sitä ei ole implementoitu, mutta tarkoituksena olisi tallentaa käyttäjän mahdolliset voitot köyttäjän profiiliin, jotta niihin päästäisiin tulevissa peleissä käsiksi.
 
-Käyttäjätunnusten osalta palataan myöhemmin. Alkuun luultavasti vain cookiet, kunnes logiikka toimii muilta osin.
+Käyttäjätunnusten osalta palataan myöhemmin.
 
 ## Kehitysideat
-* Kivat grafiikat ja nättejä värejä
-* Leaderboardit kovimmille gamblaajille
+* Sisäänkirjautuminen ja voittojen tallentaminen
+* Ulkomuodon parantaminen
+* Lisää voittorivejä
+* Voittotaulukon parantaminen
