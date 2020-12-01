@@ -5,4 +5,5 @@ Päivä | Aika | Tehty
 22.11.|2h|ohjelman rungon alustamista
 24.11.|3h|ensimmäisten toimintojen implementointia
 26.11.|1h|uusia kuvia ja voittojen näyttämistä
-Yhteensä|14h45min
+1.12|3h|testit ja checkstylet kuntoon
+Yhteensä|17h45min
