@@ -24,7 +24,7 @@ public class Ui extends Application {
     private String money;
     
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
         
         slot = new SlotLogic();
         player = new Player();
@@ -45,21 +45,27 @@ public class Ui extends Application {
         gPane.setAlignment(Pos.CENTER);
         gPane.setVgap(15);
         gPane.setHgap(15);
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 gPane.add(imageHandler(3), j, i);
             }
         }
         
         
         //Button
-        Button button = new Button("SPIN");
+        Image playImage = new Image("images/other/play.png", 100, 100, false, false);
+        ImageView playView = new ImageView(playImage);
+        
+        Button button = new Button();
+        button.setGraphic(playView);
+        button.setStyle("-fx-background-color: #ffffff00");
+        
         button.setOnMouseClicked((event) -> {
             slot.setValueSlots();
             gPane.getChildren().clear();
-            for(int i = 0; i < 3; i++) {
-                 for(int j = 0; j < 3; j++) {
-                    gPane.add(imageHandler(slot.getValueSlots(i, j)), j, i);
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    gPane.add(imageHandler(slot.getValueSlot(i, j)), j, i);
                 }
             }
             checkIfWin();
@@ -72,19 +78,18 @@ public class Ui extends Application {
         pane.setRight(winnings);
         
         //Build scene
-        Scene scene = new Scene(pane, 400, 400);
+        Scene scene = new Scene(pane, 700, 500);
         stage.setScene(scene);
         stage.show();
     }
     
     //Check win and pay
-    public void checkIfWin(){
-        if(slot.getWin()) {
+    public void checkIfWin() {
+        if (slot.getWin()) {
             player.payUp();
             winnings.setText(String.valueOf(player.getMoney()));
             text.setText("You WON!");
-        }
-        else {
+        } else {
             player.lose();
             winnings.setText(String.valueOf(player.getMoney()));
             text.setText("Lady Luck will be on your side yet!");
@@ -92,20 +97,34 @@ public class Ui extends Application {
     }
     
     //Assign images to grid values
-    public ImageView imageHandler(int x){
-        switch(x){
-            case 1: image = new Image("images/pineapple.png",100,100,false,false); break;
-            case 2: image = new Image("images/pear.png",100,100,false,false); break;
-            case 3: image = new Image("images/apple.png",100,100,false,false); break;
-            case 4: image = new Image("images/orange.png",100,100,false,false); break;
-            case 5: image = new Image("images/cherry.png",100,100,false,false); break;
-            case 6: image = new Image("images/strawberry.png",100,100,false,false); break;
-            case 7: image = new Image("images/watermelon.png",100,100,false,false); break;
+    public ImageView imageHandler(int x) {
+        switch (x) {
+            case 1: 
+                image = new Image("images/fruits/pineapple.png", 100, 100, false, false);
+                break;
+            case 2: 
+                image = new Image("images/fruits/pear.png", 100, 100, false, false);
+                break;
+            case 3: 
+                image = new Image("images/fruits/apple.png", 100, 100, false, false);
+                break;
+            case 4: 
+                image = new Image("images/fruits/orange.png", 100, 100, false, false);
+                break;
+            case 5: 
+                image = new Image("images/fruits/cherry.png", 100, 100, false, false);
+                break;
+            case 6: 
+                image = new Image("images/fruits/strawberry.png", 100, 100, false, false);
+                break;
+            case 7: 
+                image = new Image("images/fruits/watermelon.png", 100, 100, false, false);
+                break;
         }
         return new ImageView(image);
     }
     
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch(args);
     }
     

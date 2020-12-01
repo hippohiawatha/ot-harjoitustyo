@@ -4,15 +4,15 @@ public class Player {
     
     private int money;
     
-    public Player(){
+    public Player() {
         money = 20;
     }
     
-    public int getMoney(){
+    public int getMoney() {
         return money;
     }
     
-    public void payUp(){
+    public void payUp() {
         money += 5;
     }
     
