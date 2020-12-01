@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import slotmachine.domain.Player;
 import slotmachine.domain.SlotLogic;
 
 public class Ui extends Application {
@@ -18,13 +19,21 @@ public class Ui extends Application {
     private SlotLogic slot;
     private Text text;
     private Image image;
+    private Player player;
+    private Text winnings;
+    private String money;
     
     @Override
     public void start(Stage stage) throws Exception{
         
         slot = new SlotLogic();
+        player = new Player();
+        
         text = new Text("Good luck in your gamble!");
         text.setFill(Color.WHITE);
+        
+        winnings = new Text(String.valueOf(player.getMoney()));
+        winnings.setFill(Color.WHITE);
         
         BorderPane pane;
         pane = new BorderPane();
@@ -53,19 +62,33 @@ public class Ui extends Application {
                     gPane.add(imageHandler(slot.getValueSlots(i, j)), j, i);
                 }
             }
-            if(slot.getWin()) text.setText("You WON!");
-            else text.setText("Lady Luck will be on your side yet!");   
+            checkIfWin();
         });
         
         //Build borderpane
         pane.setCenter(gPane);
         pane.setLeft(button);
         pane.setBottom(text);
+        pane.setRight(winnings);
         
         //Build scene
         Scene scene = new Scene(pane, 400, 400);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    //Check win and pay
+    public void checkIfWin(){
+        if(slot.getWin()) {
+            player.payUp();
+            winnings.setText(String.valueOf(player.getMoney()));
+            text.setText("You WON!");
+        }
+        else {
+            player.lose();
+            winnings.setText(String.valueOf(player.getMoney()));
+            text.setText("Lady Luck will be on your side yet!");
+        }   
     }
     
     //Assign images to grid values
@@ -74,6 +97,10 @@ public class Ui extends Application {
             case 1: image = new Image("images/pineapple.png",100,100,false,false); break;
             case 2: image = new Image("images/pear.png",100,100,false,false); break;
             case 3: image = new Image("images/apple.png",100,100,false,false); break;
+            case 4: image = new Image("images/orange.png",100,100,false,false); break;
+            case 5: image = new Image("images/cherry.png",100,100,false,false); break;
+            case 6: image = new Image("images/strawberry.png",100,100,false,false); break;
+            case 7: image = new Image("images/watermelon.png",100,100,false,false); break;
         }
         return new ImageView(image);
     }

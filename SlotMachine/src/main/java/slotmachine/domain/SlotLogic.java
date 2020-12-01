@@ -25,7 +25,7 @@ public class SlotLogic {
     public void setValueSlots(){
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
-                slots[i][j] = random.nextInt(3) + 1 ;
+                slots[i][j] = random.nextInt(7) + 1 ;
             }
         }
     }
