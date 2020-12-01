@@ -5,7 +5,8 @@ Sovellus on perinteinen hedelmäpeli. Kehitysvaiheessa olevasta pelistä puuttuu
 ### Dokumentaatio
 
 [Työaikakirjanpito](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
-[Vaatimusmäärittely](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
+[Arkkitehtuuri](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ### Realaset
 
