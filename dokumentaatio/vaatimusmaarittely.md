@@ -8,13 +8,17 @@ Ohjelmasta tulee kaikille tuttu kolmella rivillä pelattava hedelmäpeli.
 ## Käyttäjät
 
 Pelissä ei ole muuta kuin "normaaleja" käyttäjiä.
-Käyttäjän painaessa pyöräytysnappulaa, arpoo peli kolmelle riville satunnaiset arvot. 
-Alussa sitä ei ole implementoitu, mutta tarkoituksena olisi tallentaa käyttäjän mahdolliset voitot köyttäjän profiiliin, jotta niihin päästäisiin tulevissa peleissä käsiksi.
 
-Käyttäjätunnusten osalta palataan myöhemmin.
+## Tajotut toiminnallisuudet
 
-## Kehitysideat
-* Sisäänkirjautuminen ja voittojen tallentaminen
-* Ulkomuodon parantaminen
-* Lisää voittorivejä
-* Voittotaulukon parantaminen
+- Käyttäjä voi pyöräytellä rullaa
+- [x] Käyttäjän kyseisen pelikerran varat näkyvät ja päivittyvät pelaamisen myötä 
+
+## Jatkokehitysideoita
+
+- Käyttäjä voi kirjautua sisään säilyttääkseen keräämänsä voitot/tappiot
+- Eri käyttäjien yhteisten pelattujen pelien mukaan kertyvät jackpotit
+- Voittotaulukot, joista näkee voittavat kombinaatiot
+- Voittotodennäköisyyksien parantelua
+- Palkintoja, joita voi ostaa voitoillaa, koska rahasta ei pelata
+
