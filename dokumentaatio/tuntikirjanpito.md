@@ -4,6 +4,6 @@ Päivä | Aika | Tehty
 10.11.-21.11|8h|tutustumista javafx.n käyttöön
 22.11.|2h|ohjelman rungon alustamista
 24.11.|3h|ensimmäisten toimintojen implementointia
-26.11.|1h|uusia kuvia ja voittojen näyttämistä
-1.12|4h|testit ja checkstylet kuntoon. Dokumentaatiota
-Yhteensä|18h45min
+26.11.|2h|uusia kuvia ja voittojen näyttämistä, sekä yleistä tutustumista sovelluksen kehitykseen
+1.12|4h30min|testit ja checkstylet kuntoon. Dokumentaatiota, sekä yleistä tutustumista sovelluksen kehitykseen
+Yhteensä|20h15min
