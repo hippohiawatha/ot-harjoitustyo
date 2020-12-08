@@ -1,11 +1,14 @@
 package slotmachine.domain;
 
 import java.util.Random;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class SlotLogic {
     
     Random random = new Random();
     
+    private Image image;
     private int[][] slots;
     private boolean won;
     
@@ -45,6 +48,39 @@ public class SlotLogic {
         } else {
             won = false;
         }
+    }
+    
+    //Assign images to grid values
+    public ImageView imageHandler(int x) {
+        switch (x) {
+            case 1: 
+                image = new Image("images/fruits/pineapple.png", 100, 100, false, false);
+                break;
+            case 2: 
+                image = new Image("images/fruits/pear.png", 100, 100, false, false);
+                break;
+            case 3: 
+                image = new Image("images/fruits/apple.png", 100, 100, false, false);
+                break;
+            case 4: 
+                image = new Image("images/fruits/orange.png", 100, 100, false, false);
+                break;
+            case 5: 
+                image = new Image("images/fruits/cherry.png", 100, 100, false, false);
+                break;
+            case 6: 
+                image = new Image("images/fruits/strawberry.png", 100, 100, false, false);
+                break;
+            case 7: 
+                image = new Image("images/fruits/watermelon.png", 100, 100, false, false);
+                break;
+        }
+        return new ImageView(image);
+    }
+    
+    public boolean won() {
+        checkWin();
+        return won;  
     }
     
 }

@@ -123,16 +123,15 @@ public class Ui extends Application {
         
         
         //Grid setup
-        GridPane gPane = new GridPane();
-        gPane.setAlignment(Pos.CENTER);
-        gPane.setVgap(15);
-        gPane.setHgap(15);
+        GridPane slotGrid = new GridPane();
+        slotGrid.setAlignment(Pos.CENTER);
+        slotGrid.setVgap(15);
+        slotGrid.setHgap(15);
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                gPane.add(imageHandler(3), j, i);
+                slotGrid.add(slot.imageHandler(3), j, i);
             }
         }
-        
         
         //Button
         Image playImage = new Image("images/other/play.png", 100, 100, false, false);
@@ -144,21 +143,25 @@ public class Ui extends Application {
         
         button.setOnMouseClicked((event) -> {
             slot.setValueSlots();
-            gPane.getChildren().clear();
+            slotGrid.getChildren().clear();
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    gPane.add(imageHandler(slot.getValueSlot(i, j)), j, i);
+                    slotGrid.add(slot.imageHandler(slot.getValueSlot(i, j)), j, i);
                 }
             }
-            try {
-                checkIfWin();
-            } catch (SQLException ex) {
-                Logger.getLogger(Ui.class.getName()).log(Level.SEVERE, null, ex);
+            if (slot.won()) {
+                player.payUp();
+                accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
+                wonText.setText("You WON!");
+            } else {
+                player.lose();
+                accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
+                wonText.setText("Lady Luck will be on your side yet!");
             }
         });
         
         //Build borderpane
-        pane.setCenter(gPane);
+        pane.setCenter(slotGrid);
         pane.setLeft(button);
         pane.setBottom(wonText);
         pane.setRight(accBalance);
@@ -167,50 +170,6 @@ public class Ui extends Application {
         gameScene = new Scene(pane, 700, 500);
         stage.setScene(loginScene);
         stage.show();
-    }
-    
-    //Check win and pay
-    public void checkIfWin() throws SQLException {
-        //dbHandle();
-        if (slot.getWin()) {
-            player.payUp();
-            //player = slotService.payUp(player, 5);
-            accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
-            wonText.setText("You WON!");
-        } else {
-            player.lose();
-            //player = slotService.taxLose(player, 1);
-            accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
-            wonText.setText("Lady Luck will be on your side yet!");
-        }   
-    }
-    
-    //Assign images to grid values
-    public ImageView imageHandler(int x) {
-        switch (x) {
-            case 1: 
-                image = new Image("images/fruits/pineapple.png", 100, 100, false, false);
-                break;
-            case 2: 
-                image = new Image("images/fruits/pear.png", 100, 100, false, false);
-                break;
-            case 3: 
-                image = new Image("images/fruits/apple.png", 100, 100, false, false);
-                break;
-            case 4: 
-                image = new Image("images/fruits/orange.png", 100, 100, false, false);
-                break;
-            case 5: 
-                image = new Image("images/fruits/cherry.png", 100, 100, false, false);
-                break;
-            case 6: 
-                image = new Image("images/fruits/strawberry.png", 100, 100, false, false);
-                break;
-            case 7: 
-                image = new Image("images/fruits/watermelon.png", 100, 100, false, false);
-                break;
-        }
-        return new ImageView(image);
     }
     
     @Override
