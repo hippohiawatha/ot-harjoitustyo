@@ -12,11 +12,12 @@ Pelissä ei ole muuta kuin "normaaleja" käyttäjiä.
 ## Tajotut toiminnallisuudet
 
 - Käyttäjä voi pyöräytellä rullaa
-- [x] Käyttäjän kyseisen pelikerran varat näkyvät ja päivittyvät pelaamisen myötä 
+- Käyttäjän kyseisen pelikerran varat näkyvät ja päivittyvät pelaamisen myötä 
+- [x] Käyttäjä voi kirjautua sisään nimellään
+- [x] Kirjautuneena olevan käyttäjän varat tallentuvat databaseen, joten voi jatkaa siitä, mihin jäi
 
 ## Jatkokehitysideoita
 
-- Käyttäjä voi kirjautua sisään säilyttääkseen keräämänsä voitot/tappiot
 - Eri käyttäjien yhteisten pelattujen pelien mukaan kertyvät jackpotit
 - Voittotaulukot, joista näkee voittavat kombinaatiot
 - Voittotodennäköisyyksien parantelua
