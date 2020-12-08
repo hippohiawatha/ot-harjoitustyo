@@ -29,7 +29,7 @@ public class Ui extends Application {
     private SlotLogic slot;
     private Image image;
     private User player;
-    private Text wonText, accBalance, accBalanceBase;
+    private Text wonText, accBalanceText, accBalanceTextBase;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -42,28 +42,28 @@ public class Ui extends Application {
         VBox loginPane = new VBox(10);
         HBox inputPane = new HBox(10);
         Label loginLabel = new Label("username");
-        TextField usernameInput = new TextField();
+        TextField nameInput = new TextField();
         
-        inputPane.getChildren().addAll(loginLabel, usernameInput);
+        inputPane.getChildren().addAll(loginLabel, nameInput);
         Label loginMessage = new Label();
         
         Button loginButton = new Button("login");
         Button createButton = new Button("create new user");
         loginButton.setOnAction(event -> {
-            String username = usernameInput.getText();
+            String username = nameInput.getText();
             player = slotService.login(username);
             if(player != null) {
-                accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
+                accBalanceText.setText(accBalanceTextBase.getText() + String.valueOf(player.getMoney()));
                 loginMessage.setText("");
                 stage.setScene(gameScene);
-                usernameInput.setText("");
+                nameInput.setText("");
             } else {
                 loginMessage.setText("User does not exist");
             }
         });
         
         createButton.setOnAction(event -> {
-            usernameInput.setText("");
+            nameInput.setText("");
             stage.setScene(newUserScene);
         });
         
@@ -86,8 +86,8 @@ public class Ui extends Application {
         createNewUserButton.setOnAction(event -> {
             String name = newNameInput.getText();
    
-            if (name.length()==2 || name.length()<2 ) {
-                userCreationMessage.setText("username or name too short");
+            if (name.length() < 3 ) {
+                userCreationMessage.setText("name is too short");
                 userCreationMessage.setTextFill(Color.RED);              
             } else if (slotService.create(name)){
                 userCreationMessage.setText("");                
@@ -95,7 +95,7 @@ public class Ui extends Application {
                 loginMessage.setTextFill(Color.GREEN);
                 stage.setScene(loginScene);      
             } else {
-                userCreationMessage.setText("username has to be unique");
+                userCreationMessage.setText("name already exists");
                 userCreationMessage.setTextFill(Color.RED);        
             }
  
@@ -103,7 +103,7 @@ public class Ui extends Application {
         
         newUserPane.getChildren().addAll(userCreationMessage, newNamePane, createNewUserButton); 
        
-        newUserScene = new Scene(newUserPane, 300, 250);
+        newUserScene = new Scene(newUserPane, 300, 300);
         
         
         //game scene
@@ -113,9 +113,9 @@ public class Ui extends Application {
         wonText.setFill(Color.WHITE);
         
         
-        accBalanceBase = new Text("Account balance: ");
-        accBalance = new Text();
-        accBalance.setFill(Color.WHITE);
+        accBalanceTextBase = new Text("Account balance: ");
+        accBalanceText = new Text();
+        accBalanceText.setFill(Color.WHITE);
         
         BorderPane pane;
         pane = new BorderPane();
@@ -151,11 +151,11 @@ public class Ui extends Application {
             }
             if (slot.won()) {
                 player.payUp();
-                accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
+                accBalanceText.setText(accBalanceTextBase.getText() + String.valueOf(player.getMoney()));
                 wonText.setText("You WON!");
             } else {
                 player.lose();
-                accBalance.setText(accBalanceBase.getText() + String.valueOf(player.getMoney()));
+                accBalanceText.setText(accBalanceTextBase.getText() + String.valueOf(player.getMoney()));
                 wonText.setText("Lady Luck will be on your side yet!");
             }
         });
@@ -164,7 +164,7 @@ public class Ui extends Application {
         pane.setCenter(slotGrid);
         pane.setLeft(button);
         pane.setBottom(wonText);
-        pane.setRight(accBalance);
+        pane.setRight(accBalanceText);
         
         //Build scene
         gameScene = new Scene(pane, 700, 500);
