@@ -6,4 +6,7 @@ Päivä | Aika | Tehty
 24.11.|3h|ensimmäisten toimintojen implementointia
 26.11.|2h|uusia kuvia ja voittojen näyttämistä, sekä yleistä tutustumista sovelluksen kehitykseen
 1.12|4h30min|testit ja checkstylet kuntoon. Dokumentaatiota, sekä yleistä tutustumista sovelluksen kehitykseen
-Yhteensä|20h15min
+6.12|2h|tutustumista db.n käyttöön
+7.12|8h|db.n kanssa säätöä ja tutustumista
+8.12|4h|db toimintaan ja yrityksiä saada kuvat näkymään jarissa
+Yhteensä|34h15min
