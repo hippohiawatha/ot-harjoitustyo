@@ -9,4 +9,5 @@ Päivä | Aika | Tehty
 6.12|2h|tutustumista db.n käyttöön
 7.12|8h|db.n kanssa säätöä ja tutustumista
 8.12|4h|db toimintaan ja yrityksiä saada kuvat näkymään jarissa
-Yhteensä|34h15min
+8.12|3h45min|dokumentaatiota
+Yhteensä|38h
