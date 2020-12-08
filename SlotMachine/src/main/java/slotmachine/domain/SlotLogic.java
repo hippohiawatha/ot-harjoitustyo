@@ -3,6 +3,7 @@ package slotmachine.domain;
 import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javax.imageio.ImageIO;
 
 public class SlotLogic {
     
@@ -50,29 +51,35 @@ public class SlotLogic {
         }
     }
     
+    //Just to make imageHandler a bit cleaner
+    public Image getImage(String fruit) {
+        Image i = new Image(getClass().getResourceAsStream("/images/fruits/" + fruit + ".png"), 100, 100, false, false);
+        return i;
+    }
+    
     //Assign images to grid values
     public ImageView imageHandler(int x) {
         switch (x) {
             case 1: 
-                image = new Image("images/fruits/pineapple.png", 100, 100, false, false);
+                image = getImage("pineapple");
                 break;
             case 2: 
-                image = new Image("images/fruits/pear.png", 100, 100, false, false);
+                image = getImage("pear");
                 break;
             case 3: 
-                image = new Image("images/fruits/apple.png", 100, 100, false, false);
+                image = getImage("apple");
                 break;
             case 4: 
-                image = new Image("images/fruits/orange.png", 100, 100, false, false);
+                image = getImage("orange");
                 break;
             case 5: 
-                image = new Image("images/fruits/cherry.png", 100, 100, false, false);
+                image = getImage("cherry");
                 break;
             case 6: 
-                image = new Image("images/fruits/strawberry.png", 100, 100, false, false);
+                image = getImage("strawberry");
                 break;
             case 7: 
-                image = new Image("images/fruits/watermelon.png", 100, 100, false, false);
+                image = getImage("watermelon");
                 break;
         }
         return new ImageView(image);
