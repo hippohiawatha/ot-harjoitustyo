@@ -4,6 +4,8 @@ import java.sql.*;
 
 public class Database {
     
+    //Opens database connection and creates new db and/or table if needed
+    
     public Connection connection() {
         Connection db = null;
         try {

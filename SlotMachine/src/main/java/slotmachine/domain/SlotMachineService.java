@@ -8,6 +8,8 @@ import slotmachine.dao.UserDao;
 
 public class SlotMachineService implements UserDao {
     
+    //Implements UserDao defined functionalities
+    
     private final Database db  = new Database();
     private Statement s;
     
@@ -43,8 +45,8 @@ public class SlotMachineService implements UserDao {
     @Override
     public User getUser(String username) throws SQLException, ClassNotFoundException {
         User user = null;
-        for(User u : getAll()) {
-            if(u.getName().equals(username)) {
+        for (User u : getAll()) {
+            if (u.getName().equals(username)) {
                 try {
                     PreparedStatement p = db.connection().
                             prepareStatement("SELECT balance FROM Users WHERE username = ?");
@@ -62,7 +64,7 @@ public class SlotMachineService implements UserDao {
         return user;
     }
     
-    //was in use sooner, we'll see if needed later
+    //was in use earlier, we'll see if needed later
     /*
     @Override
     public User payUp(User user, int amount) {

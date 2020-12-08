@@ -6,6 +6,9 @@ import slotmachine.domain.User;
 
 
 public interface UserDao {
+    
+    //Database functionalities
+    
     boolean create(String username);
     User login(String usermame);
     User getUser(String username) throws SQLException, ClassNotFoundException;

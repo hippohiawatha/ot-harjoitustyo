@@ -7,6 +7,8 @@ import javax.imageio.ImageIO;
 
 public class SlotLogic {
     
+    //Initializes and takes care of the slotmachine's functionalities
+    
     Random random = new Random();
     
     private Image image;
@@ -61,28 +63,21 @@ public class SlotLogic {
     public ImageView imageHandler(int x) {
         switch (x) {
             case 1: 
-                image = getImage("pineapple");
-                break;
+                return new ImageView(getImage("pineapple"));
             case 2: 
-                image = getImage("pear");
-                break;
+                return new ImageView(getImage("pear"));
             case 3: 
-                image = getImage("apple");
-                break;
+                return new ImageView(getImage("apple"));
             case 4: 
-                image = getImage("orange");
-                break;
+                return new ImageView(getImage("orange"));
             case 5: 
-                image = getImage("cherry");
-                break;
+                return new ImageView(getImage("cherry"));
             case 6: 
-                image = getImage("strawberry");
-                break;
+                return new ImageView(getImage("strawberry"));
             case 7: 
-                image = getImage("watermelon");
-                break;
+                return new ImageView(getImage("watermelon"));
         }
-        return new ImageView(image);
+        return null;
     }
     
     public boolean won() {
