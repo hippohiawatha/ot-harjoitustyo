@@ -1,11 +1,11 @@
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import slotmachine.domain.Player;
+import slotmachine.domain.User;
 
 public class PlayerTest {
     
-    Player player = new Player();
+    User player = new User("");
     
     @Test
     public void getMoney(){
