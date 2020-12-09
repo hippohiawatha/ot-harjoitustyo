@@ -1,9 +1,13 @@
 package slotmachine.domain;
 
+import java.net.URL;
 import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javax.imageio.ImageIO;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SlotLogic {
     
@@ -55,8 +59,7 @@ public class SlotLogic {
     
     //Just to make imageHandler a bit cleaner
     public Image getImage(String fruit) {
-        Image i = new Image(getClass().getResourceAsStream("/images/fruits/" + fruit + ".png"), 100, 100, false, false);
-        return i;
+        return new Image("images/fruits/" + fruit + ".png", 100, 100, false, false);
     }
     
     //Assign images to grid values
