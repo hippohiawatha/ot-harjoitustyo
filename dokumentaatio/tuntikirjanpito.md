@@ -10,4 +10,6 @@ Päivä | Aika | Tehty
 7.12|8h|db.n kanssa säätöä ja tutustumista
 8.12|4h|db toimintaan ja yrityksiä saada kuvat näkymään jarissa
 8.12|3h45min|dokumentaatiota
-Yhteensä|38h
+9.12|2h|conffausta
+16.12|2h30min|lisää conffausta
+Yhteensä|42h30min
