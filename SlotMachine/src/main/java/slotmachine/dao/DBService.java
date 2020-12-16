@@ -1,31 +1,36 @@
-package slotmachine.domain;
+package slotmachine.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import slotmachine.dao.UserDao;
+import slotmachine.domain.User;
 
 
-public class SlotMachineService implements UserDao {
+public class DBService implements UserDao {
     
     //Implements UserDao defined functionalities
     
-    private final Database db  = new Database();
+    private Database db;
     private Statement s;
     
+    public DBService(boolean test) {
+        db = new Database(test);
+        db.initializeDb();
+    }
     
     @Override
     public boolean create(String username) {
-        db.initializeDb();
         try {
-            PreparedStatement p = db.connection().
-                    prepareStatement("INSERT INTO Users (username, balance) VALUES (?, ?)");
+            Connection conn = db.connection();
+            PreparedStatement p = conn.prepareStatement("INSERT INTO Users (username, balance) VALUES (?, ?)");
             p.setString(1, username);
             p.setInt(2, 20);
             p.execute();
+            conn.close();
             System.out.println("User added to database!");
             return true;
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             System.out.println("Error creating user");
             return false;
         }
@@ -48,62 +53,26 @@ public class SlotMachineService implements UserDao {
         for (User u : getAll()) {
             if (u.getName().equals(username)) {
                 try {
-                    PreparedStatement p = db.connection().
-                            prepareStatement("SELECT balance FROM Users WHERE username = ?");
+                    Connection conn = db.connection();
+                    PreparedStatement p = conn.prepareStatement("SELECT balance FROM Users WHERE username = ?");
                     p.setString(1, username);
                     ResultSet rs = p.executeQuery();
                     u.setMoney(rs.getInt("balance"));
-                    System.out.println(u.getMoney());
+                    conn.close();
                     return u;
-                } catch (SQLException ex) {
-                    System.out.println(ex.getMessage());
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
                     return null;
                 }
             }
         }
         return user;
     }
-    
-    //was in use earlier, we'll see if needed later
-    /*
-    @Override
-    public User payUp(User user, int amount) {
-        int balance = user.getMoney() + amount;
-        try {
-            PreparedStatement p = db.connection().
-                    prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
-            p.setInt(1, user.getMoney() + amount);
-            p.setString(2, user.getName());
-            p.executeUpdate();
-            user.setMoney(balance);
-            return user;
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            return null;
-        }
-    }
-    
-    Override
-    public User taxLose(User user, int amount) {
-        int balance = user.getMoney() - amount;
-        try {
-            PreparedStatement p = db.connection().
-                    prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
-            p.setInt(1, balance);
-            p.setString(2, user.getName());
-            p.executeUpdate();
-            user.setMoney(balance);
-            return user;
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            return null;
-        }
-    }
-    */
 
     @Override
     public List<User> getAll() throws ClassNotFoundException, SQLException {
-        s = db.connection().createStatement();
+        Connection conn = db.connection();
+        s = conn.createStatement();
         List<User> users = new ArrayList<>();
         try {
             ResultSet result = s.executeQuery("SELECT * FROM Users");
@@ -111,8 +80,13 @@ public class SlotMachineService implements UserDao {
                 String username = result.getString("username");
                 users.add(new User(username));
             }
+            s.close();
+            conn.close();
         } catch (SQLException e) {
+            s.close();
+            conn.close();
             System.out.println(e.getMessage());
+            System.out.println("Error in getAll()");
         }
         return users;
     }
@@ -120,16 +94,22 @@ public class SlotMachineService implements UserDao {
     @Override
     public boolean updateBalance(User user) {
         try {
-            PreparedStatement p = db.connection().
-                    prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
+            Connection conn = db.connection();
+            PreparedStatement p = conn.prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
             p.setInt(1, user.getMoney());
             p.setString(2, user.getName());
             p.executeUpdate();
+            conn.close();
             return true;
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Error in updateBalance()");
             return false;
         }
+    }
+    
+    public void deleteTestDB(){
+        db.deleteTestDB();
     }
     
 }

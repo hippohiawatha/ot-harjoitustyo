@@ -1,8 +1,6 @@
 package slotmachine.ui;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import slotmachine.dao.DBService;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -22,7 +20,7 @@ import slotmachine.domain.*;
 
 public class Ui extends Application {
     
-    private SlotMachineService slotService;
+    private DBService slotService;
     
     private Scene loginScene, newUserScene, gameScene;
     
@@ -34,7 +32,7 @@ public class Ui extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        slotService = new SlotMachineService();
+        slotService = new DBService(false);
         player = new User("");
         
         

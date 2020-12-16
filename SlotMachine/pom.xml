@@ -10,6 +10,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    
     <dependencies>
         
         <dependency>
@@ -89,6 +90,7 @@
         </dependency>
     </dependencies>
     <build>
+        
         <plugins>
             
             <plugin>
@@ -131,7 +133,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>1.6</version>
+                <version>2.4.3</version>
+                 <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>slotmachine.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
