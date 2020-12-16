@@ -25,7 +25,8 @@ public class DBService implements UserDao {
             PreparedStatement p = conn.prepareStatement("INSERT INTO Users (username, balance) VALUES (?, ?)");
             p.setString(1, username);
             p.setInt(2, 20);
-            p.execute();
+            p.executeUpdate();
+            p.close();
             conn.close();
             System.out.println("User added to database!");
             return true;
@@ -58,6 +59,8 @@ public class DBService implements UserDao {
                     p.setString(1, username);
                     ResultSet rs = p.executeQuery();
                     u.setMoney(rs.getInt("balance"));
+                    rs.close();
+                    p.close();
                     conn.close();
                     return u;
                 } catch (SQLException e) {
@@ -99,6 +102,7 @@ public class DBService implements UserDao {
             p.setInt(1, user.getMoney());
             p.setString(2, user.getName());
             p.executeUpdate();
+            p.close();
             conn.close();
             return true;
         } catch (SQLException e) {
