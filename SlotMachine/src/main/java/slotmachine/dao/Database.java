@@ -20,13 +20,13 @@ public class Database {
     }
     
     public Connection connection() {
-        Connection db = null;
+        Connection c = null;
         try {
-            db = DriverManager.getConnection(dbUrl);
+            c = DriverManager.getConnection(dbUrl);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Connection failed");
         }
-        return db;
+        return c;
     }
     
     public void initializeDb() {
@@ -34,21 +34,20 @@ public class Database {
             Connection conn = connection();
             Statement s = conn.createStatement();
             s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE, balance INTEGER)");
-            s.close();
             conn.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("init bd failed, most likely the table already exists");
         }
     }
     
     public void deleteTestDB() {
         try {
-            Path path = FileSystems.getDefault().getPath("test.db");
-            Files.delete(path);
+            Path p = FileSystems.getDefault().getPath("test.db");
+            Files.delete(p);
             System.out.println("Test database removed");
         } catch (Exception e) {
-            System.out.println("Test database was not deleted.");
+            System.out.println(e.getMessage());
+            System.out.println("Test db deletion failed");
         }
     }
 }

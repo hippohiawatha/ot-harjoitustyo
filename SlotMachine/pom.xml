@@ -109,6 +109,7 @@
                 <configuration>
                     <excludes>
                         <exclude>slotmachine/ui/*</exclude>
+                        <exclude>slotmachine/Main.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

@@ -3,6 +3,8 @@ package slotmachine.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import slotmachine.domain.User;
 
 
@@ -11,7 +13,10 @@ public class DBService implements UserDao {
     //Implements UserDao defined functionalities
     
     private Database db;
+    private Connection conn;
+    private PreparedStatement p;
     private Statement s;
+    private ResultSet rs;
     
     public DBService(boolean test) {
         db = new Database(test);
@@ -21,19 +26,23 @@ public class DBService implements UserDao {
     @Override
     public boolean create(String username) {
         try {
-            Connection conn = db.connection();
-            PreparedStatement p = conn.prepareStatement("INSERT INTO Users (username, balance) VALUES (?, ?)");
+            conn = db.connection();
+            p = conn.prepareStatement("INSERT INTO Users (username, balance) VALUES (?, ?)");
             p.setString(1, username);
             p.setInt(2, 20);
-            p.executeUpdate();
-            p.close();
-            conn.close();
+            p.execute();
             System.out.println("User added to database!");
             return true;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("Error creating user");
             return false;
+        } finally {
+            try {
+                p.close();
+                conn.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
     }
 
@@ -42,54 +51,53 @@ public class DBService implements UserDao {
         try {
             User user = getUser(username);
             return user;
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error logging in");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
 
     @Override
     public User getUser(String username) throws SQLException, ClassNotFoundException {
-        User user = null;
         for (User u : getAll()) {
             if (u.getName().equals(username)) {
                 try {
-                    Connection conn = db.connection();
-                    PreparedStatement p = conn.prepareStatement("SELECT balance FROM Users WHERE username = ?");
+                    conn = db.connection();
+                    p = conn.prepareStatement("SELECT balance FROM Users WHERE username = ?");
                     p.setString(1, username);
-                    ResultSet rs = p.executeQuery();
+                    rs = p.executeQuery();
                     u.setMoney(rs.getInt("balance"));
-                    rs.close();
-                    p.close();
-                    conn.close();
                     return u;
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                     return null;
+                } finally {
+                    p.close();
+                    rs.close();
+                    conn.close();
                 }
             }
         }
-        return user;
+        return null;
     }
 
     @Override
     public List<User> getAll() throws ClassNotFoundException, SQLException {
-        Connection conn = db.connection();
-        s = conn.createStatement();
         List<User> users = new ArrayList<>();
         try {
-            ResultSet result = s.executeQuery("SELECT * FROM Users");
-            while (result.next()) {
-                String username = result.getString("username");
+            conn = db.connection();
+            s = conn.createStatement();
+            rs = s.executeQuery("SELECT * FROM Users");
+            while (rs.next()) {
+                String username = rs.getString("username");
                 users.add(new User(username));
             }
-            s.close();
-            conn.close();
         } catch (SQLException e) {
-            s.close();
-            conn.close();
             System.out.println(e.getMessage());
-            System.out.println("Error in getAll()");
+        } finally {
+            s.close();
+            rs.close();
+            conn.close();
         }
         return users;
     }
@@ -97,23 +105,27 @@ public class DBService implements UserDao {
     @Override
     public boolean updateBalance(User user) {
         try {
-            Connection conn = db.connection();
-            PreparedStatement p = conn.prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
+            conn = db.connection();
+            p = conn.prepareStatement("UPDATE Users SET balance = ? WHERE username = ?");
             p.setInt(1, user.getMoney());
             p.setString(2, user.getName());
             p.executeUpdate();
-            p.close();
-            conn.close();
             return true;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("Error in updateBalance()");
             return false;
+        } finally {
+            try {
+                p.close();
+                conn.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+            
         }
     }
     
-    public void deleteTestDB(){
+    public void deleteTestDB() {
         db.deleteTestDB();
     }
-    
 }

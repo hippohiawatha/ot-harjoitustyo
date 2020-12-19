@@ -25,7 +25,6 @@ public class Ui extends Application {
     private Scene loginScene, newUserScene, gameScene;
     
     private SlotLogic slot;
-    private Image image;
     private User player;
     private Text wonText, accBalanceText, accBalanceTextBase;
     

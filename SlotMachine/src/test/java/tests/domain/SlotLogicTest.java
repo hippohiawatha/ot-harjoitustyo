@@ -1,6 +1,7 @@
-package tests;
+package tests.domain;
 
 
+import javafx.scene.image.Image;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import slotmachine.domain.SlotLogic;
@@ -32,7 +33,7 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testWin2(){
+    public void testWin2() {
         slot.getSlots()[0][0] = 8;
         for (int i = 0; i < 3; i++) {
             slot.getSlots()[1][i] = 1;
@@ -42,7 +43,7 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testWin3(){
+    public void testWin3() {
         slot.getSlots()[0][0] = 8;
         slot.getSlots()[1][0] = 8;
         for (int i = 0; i < 3; i++) {
@@ -53,11 +54,19 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testLose(){
+    public void testLose() {
         slot.getSlots()[0][1] = 8;
         slot.getSlots()[1][1] = 8;
         slot.getSlots()[2][1] = 8;
         assertFalse(slot.getWin());
+    }
+    
+    @Test
+    public void testWon() {
+        for (int i = 0; i < 3; i++) {
+            slot.getSlots()[0][i] = 1;
+        }
+        assertTrue(slot.won());
     }
     
 }

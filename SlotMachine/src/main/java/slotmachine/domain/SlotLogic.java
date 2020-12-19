@@ -1,13 +1,8 @@
 package slotmachine.domain;
 
-import java.net.URL;
 import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javax.imageio.ImageIO;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class SlotLogic {
     
@@ -15,7 +10,6 @@ public class SlotLogic {
     
     Random random = new Random();
     
-    private Image image;
     private int[][] slots;
     private boolean won;
     
