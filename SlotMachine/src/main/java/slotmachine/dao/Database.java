@@ -5,12 +5,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.*;
 
+/**
+ * 
+ * handles connection to database
+ */
 public class Database {
     
     //Opens database connection and creates new db and/or table if needed
     
     private String dbUrl;
     
+    /**
+     * sets database's url
+     * @param test boolean value of wether program is ran or tested
+     */
     public Database(boolean test) {
         if (test) {
             dbUrl = "jdbc:sqlite:test.db";
@@ -19,6 +27,10 @@ public class Database {
         }
     }
     
+    /**
+     * opens connetion to database
+     * @return Connection
+     */
     public Connection connection() {
         Connection c = null;
         try {
@@ -29,6 +41,9 @@ public class Database {
         return c;
     }
     
+    /**
+     * creates new table of Users if it doesn't exsist
+     */
     public void initializeDb() {
         try {
             Connection conn = connection();
@@ -40,6 +55,9 @@ public class Database {
         }
     }
     
+    /**
+     * deletes test database
+     */
     public void deleteTestDB() {
         try {
             Path p = FileSystems.getDefault().getPath("test.db");

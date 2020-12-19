@@ -7,7 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import slotmachine.domain.User;
 
-
+/**
+ * handles database communication
+ */
 public class DBService implements UserDao {
     
     //Implements UserDao defined functionalities
@@ -18,11 +20,20 @@ public class DBService implements UserDao {
     private Statement s;
     private ResultSet rs;
     
+    /**
+     * initializes the DBService
+     * @param test boolean value of wether program is ran or tested
+     */
     public DBService(boolean test) {
         db = new Database(test);
         db.initializeDb();
     }
     
+    /**
+     * create new use in database
+     * @param username username
+     * @return true if user is created succesfully
+     */
     @Override
     public boolean create(String username) {
         try {
@@ -46,6 +57,11 @@ public class DBService implements UserDao {
         }
     }
 
+    /**
+     * login to existing user
+     * @param username username
+     * @return User or null, if given username is not in database
+     */
     @Override
     public User login(String username) {
         try {
@@ -57,6 +73,13 @@ public class DBService implements UserDao {
         }
     }
 
+    /**
+     * helper method for others
+     * @param username username
+     * @return User or null, if given username is not in database
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public User getUser(String username) throws SQLException, ClassNotFoundException {
         for (User u : getAll()) {
@@ -81,6 +104,12 @@ public class DBService implements UserDao {
         return null;
     }
 
+    /**
+     * helper method for others
+     * @return List<User> 
+     * @throws ClassNotFoundException
+     * @throws SQLException 
+     */
     @Override
     public List<User> getAll() throws ClassNotFoundException, SQLException {
         List<User> users = new ArrayList<>();
@@ -102,6 +131,11 @@ public class DBService implements UserDao {
         return users;
     }
 
+    /**
+     * updates given users balance
+     * @param user User
+     * @return true if users balance was updated successfully
+     */
     @Override
     public boolean updateBalance(User user) {
         try {
@@ -125,6 +159,9 @@ public class DBService implements UserDao {
         }
     }
     
+    /**
+     * delete the database created for testing
+     */
     public void deleteTestDB() {
         db.deleteTestDB();
     }

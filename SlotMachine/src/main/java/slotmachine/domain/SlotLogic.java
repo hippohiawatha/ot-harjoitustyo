@@ -4,6 +4,10 @@ import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * 
+ * handles logic behind slots and what is seen by user
+ */
 public class SlotLogic {
     
     //Initializes and takes care of the slotmachine's functionalities
@@ -13,19 +17,35 @@ public class SlotLogic {
     private int[][] slots;
     private boolean won;
     
+    /**
+     * initialized SlotLogic
+     */
     public SlotLogic() {
         slots = new int[3][3];
         setValueSlots();
     }
     
+    /**
+     * 
+     * @return matrix of type int 
+     */
     public int[][] getSlots() {
         return slots;
     }
     
+    /**
+     * 
+     * @param x x coordinate for slot
+     * @param y y coordinate for slot
+     * @return slot in position (x,y)
+     */
     public int getValueSlot(int x, int y) {
         return slots[x][y];
     }
     
+    /**
+     * sets values for all slots
+     */
     public void setValueSlots() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -34,11 +54,18 @@ public class SlotLogic {
         }
     }
     
+    /**
+     * 
+     * @return boolean of wether game is won or not
+     */
     public boolean getWin() {
         checkWin();
         return won;
     }
     
+    /**
+     * check if any of the rows have won
+     */
     public void checkWin() {
         if (slots[0][0] == slots[0][1] && slots[0][1] == slots[0][2]) {
             won = true;
@@ -51,12 +78,20 @@ public class SlotLogic {
         }
     }
     
-    //Just to make imageHandler a bit cleaner
+    /**
+     * 
+     * @param fruit string value of the wanted fruit
+     * @return Image of given fruit
+     */
     public Image getImage(String fruit) {
         return new Image("images/fruits/" + fruit + ".png", 100, 100, false, false);
     }
     
-    //Assign images to grid values
+    /**
+     * 
+     * @param x int of slots value
+     * @return ImageView of given int
+     */
     public ImageView imageHandler(int x) {
         switch (x) {
             case 1: 
@@ -77,6 +112,10 @@ public class SlotLogic {
         return null;
     }
     
+    /**
+     * 
+     * @return boolean of win
+     */
     public boolean won() {
         checkWin();
         return won;  
