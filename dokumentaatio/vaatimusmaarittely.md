@@ -2,24 +2,25 @@
 
 ## Sovelluksen tarkoitus
 
-Uudistunut ajatus!
-Ohjelmasta tulee kaikille tuttu kolmella rivillä pelattava hedelmäpeli. 
+Sovellus tuttu kolmella rivillä pelattava hedelmäpeli. 
 
 ## Käyttäjät
 
-Pelissä ei ole muuta kuin "normaaleja" käyttäjiä.
+Tällä hetkellä pelissä ei ole admin käyttäjiä, kaikille on tarjolla samat oikeudet pelaamiseen.
 
 ## Tajotut toiminnallisuudet
 
 - Käyttäjä voi pyöräytellä rullaa
 - Käyttäjän kyseisen pelikerran varat näkyvät ja päivittyvät pelaamisen myötä 
-- [x] Käyttäjä voi kirjautua sisään nimellään
-- [x] Kirjautuneena olevan käyttäjän varat tallentuvat databaseen, joten voi jatkaa siitä, mihin jäi
+- Käyttäjä voi kirjautua sisään nimellään
+- Kirjautuneena olevan käyttäjän varat tallentuvat databaseen, joten voi jatkaa siitä, mihin jäi
 
 ## Jatkokehitysideoita
 
+- Voittotodennäköisyyksien parantelua
+- Mahdollisuus nostaa ja laskea panosta
+- Kun pelaajan varat menevät nollaa, ilmestyy nappula, josta varat voi resetata (tällä hetkellä voi mennä miinukselle)
 - Eri käyttäjien yhteisten pelattujen pelien mukaan kertyvät jackpotit
 - Voittotaulukot, joista näkee voittavat kombinaatiot
-- Voittotodennäköisyyksien parantelua
 - Palkintoja, joita voi ostaa voitoillaa, koska rahasta ei pelata
 
