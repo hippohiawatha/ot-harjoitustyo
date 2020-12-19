@@ -12,4 +12,5 @@ Päivä | Aika | Tehty
 8.12|3h45min|dokumentaatiota
 9.12|2h|conffausta
 16.12|2h30min|lisää conffausta
-Yhteensä|42h30min
+19.12|5h|conffausta etätyöpöytää varten
+Yhteensä|47h30min
