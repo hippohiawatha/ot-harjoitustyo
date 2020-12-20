@@ -9,10 +9,15 @@ Sovellus tuttu kolmella rivillä pelattava hedelmäpeli.
 Tällä hetkellä pelissä ei ole admin käyttäjiä, kaikille on tarjolla samat oikeudet pelaamiseen.
 
 ## Tajotut toiminnallisuudet
-
-- Käyttäjä kirjautuu sisään omalla käyttäjänimellään
-- Käyttäjä voi pyöräytellä rullaa
-- Kirjautuneena olevan käyttäjän varat tallentuvat databaseen, joten voi jatkaa siitä, mihin jäi
+  #### Ennen kirjautumista
+  - Voi luoda uuden käyttäjän. Nimen tulee olla uniikki
+  - Voi kirjautua sisään nimellään  
+  Ongelmien sattuessa tulee siitä ilmoitus
+  
+  #### Kirjautumisen jälkeen
+  - Käyttäjä näkee oman pelitilinsä varat
+  - Voi pelata peliä  
+  Perusversiossa panosta ei voi muuttaa, vaan se on vakio 1
 
 ## Jatkokehitysideoita
 
