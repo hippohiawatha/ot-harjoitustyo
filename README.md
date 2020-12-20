@@ -14,7 +14,7 @@ Sovellus on perinteinen hedelmäpeli.
 
 [Viikko 5](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Viikko5)  
 [Viikko 6](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/viikko6)  
-[Final](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Final)
+[Loppupalautus](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Loppupalautus)
 
 ### Komentorivitoiminnot
 
