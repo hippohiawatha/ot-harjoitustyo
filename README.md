@@ -1,6 +1,6 @@
 # Slotmachine
 
-Sovellus on perinteinen hedelmäpeli. Kehitysvaiheessa olevasta pelistä puuttuu vielä oleellisia osia, kuten voittojen tallentuminen pelaajalle. Toistaiseksi voi siis katsoa, kun hedelmien kuvat vaihtuvat.
+Sovellus on perinteinen hedelmäpeli.
 
 ### Dokumentaatio
 
