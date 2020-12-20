@@ -14,7 +14,7 @@ Dao-luokkien testaukseen automatisoidut testit luovat oman testi databasen, joka
 Käyttöliittymäluokkaa lukuunottamatta testien rivikattavuus on 76% ja haarautumakattavuus 62%  
 Testikattavuus kärsii kahdesta metodista, jotka palauttavat Imagen ja ImageViewn, näiden testaus ei onnistunut.  
 Rivikattavuus kärsii myös hieman try/catcheistä, joiden catchit eivät tule testatuiksi.  
-
+![testi](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png)
 
 ## Järjestelmätestaus
 Järjestelmätestaus on suoritettu manuaalisesti
