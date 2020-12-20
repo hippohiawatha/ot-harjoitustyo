@@ -14,4 +14,5 @@ Päivä | Aika | Tehty
 16.12|2h30min|lisää conffausta
 19.12|5h|conffausta etätyöpöytää varten
 19.12|1h30min|pientä conffausta ja dokumentointia
-Yhteensä|49h
+20.12|3h|dokumentointia ja pientä viimeistelyä
+Yhteensä|52h
