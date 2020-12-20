@@ -24,4 +24,4 @@ Sovellusta on testattu sekä macilla, windowsilla, että etätyöpöydän cubbli
 Cubbli sulkee database, jos ohjelman käynnistää terminaalin kautta, muuten ei ongelmia
 
 #### Toiminnallisuudet
-Määrittelydokumentin toiminnallisuudet on testattu. Myös virhetilanteet on otettu huomioon.
+[Määrittelydokumentin](https://github.com/hippohiawatha/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md) toiminnallisuudet on testattu. Myös virhetilanteet on otettu huomioon.
