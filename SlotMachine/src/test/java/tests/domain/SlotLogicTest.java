@@ -24,7 +24,7 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testWin1(){
+    public void testWinRow1(){
         for (int i = 0; i < 3; i++) {
             slot.getSlots()[0][i] = 1;
         }
@@ -33,7 +33,7 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testWin2() {
+    public void testWinRow2() {
         slot.getSlots()[0][0] = 8;
         for (int i = 0; i < 3; i++) {
             slot.getSlots()[1][i] = 1;
@@ -43,7 +43,7 @@ public class SlotLogicTest {
     }
     
     @Test
-    public void testWin3() {
+    public void testWinRow3() {
         slot.getSlots()[0][0] = 8;
         slot.getSlots()[1][0] = 8;
         for (int i = 0; i < 3; i++) {

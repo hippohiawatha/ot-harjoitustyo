@@ -67,11 +67,11 @@ public class SlotLogic {
      * check if any of the rows have won
      */
     public void checkWin() {
-        if (slots[0][0] == slots[0][1] && slots[0][1] == slots[0][2]) {
+        if (slots[0][0] == slots[0][1] && slots[0][0] == slots[0][2]) {
             won = true;
-        } else if (slots[1][0] == slots[1][1] && slots[1][1] == slots[1][2]) {
+        } else if (slots[1][0] == slots[1][1] && slots[1][0] == slots[1][2]) {
             won = true;
-        } else if (slots[2][0] == slots[2][1] && slots[2][1] == slots[2][2]) {
+        } else if (slots[2][0] == slots[2][1] && slots[2][0] == slots[2][2]) {
             won = true;
         } else {
             won = false;

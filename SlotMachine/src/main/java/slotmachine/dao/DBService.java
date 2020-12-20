@@ -77,8 +77,8 @@ public class DBService implements UserDao {
      * helper method for others
      * @param username username
      * @return User or null, if given username is not in database
-     * @throws SQLException
-     * @throws ClassNotFoundException 
+     * @throws SQLException SQLException
+     * @throws ClassNotFoundException ClassNotFoundException
      */
     @Override
     public User getUser(String username) throws SQLException, ClassNotFoundException {
@@ -106,9 +106,9 @@ public class DBService implements UserDao {
 
     /**
      * helper method for others
-     * @return List<User> 
-     * @throws ClassNotFoundException
-     * @throws SQLException 
+     * @return List of all users
+     * @throws ClassNotFoundException ClassNotFoundException
+     * @throws SQLException SQLException
      */
     @Override
     public List<User> getAll() throws ClassNotFoundException, SQLException {
