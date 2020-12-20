@@ -21,7 +21,7 @@ Järjestelmätestaus on suoritettu manuaalisesti
 
 #### Asennus ja konfiguraatio
 Sovellusta on testattu sekä macilla, windowsilla, että etätyöpöydän cubbli linuxilla.  
-Cubbli sulkee database, jos ohjelman käynnistää terminaalin kautta.  
+Cubbli sulkee database, jos ohjelman käynnistää terminaalin kautta, muuten ei ongelmia
 
 #### Toiminnallisuudet
 Määrittelydokumentin toiminnallisuudet on testattu. Myös virhetilanteet on otettu huomioon.
