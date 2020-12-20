@@ -10,9 +10,8 @@ Tällä hetkellä pelissä ei ole admin käyttäjiä, kaikille on tarjolla samat
 
 ## Tajotut toiminnallisuudet
 
+- Käyttäjä kirjautuu sisään omalla käyttäjänimellään
 - Käyttäjä voi pyöräytellä rullaa
-- Käyttäjän kyseisen pelikerran varat näkyvät ja päivittyvät pelaamisen myötä 
-- Käyttäjä voi kirjautua sisään nimellään
 - Kirjautuneena olevan käyttäjän varat tallentuvat databaseen, joten voi jatkaa siitä, mihin jäi
 
 ## Jatkokehitysideoita
@@ -23,4 +22,5 @@ Tällä hetkellä pelissä ei ole admin käyttäjiä, kaikille on tarjolla samat
 - Eri käyttäjien yhteisten pelattujen pelien mukaan kertyvät jackpotit
 - Voittotaulukot, joista näkee voittavat kombinaatiot
 - Palkintoja, joita voi ostaa voitoillaa, koska rahasta ei pelata
+- Lisää voittorivejä
 
