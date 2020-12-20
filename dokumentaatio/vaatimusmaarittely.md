@@ -12,12 +12,12 @@ Tällä hetkellä pelissä ei ole admin käyttäjiä, kaikille on tarjolla samat
   #### Ennen kirjautumista
   - Voi luoda uuden käyttäjän. Nimen tulee olla uniikki
   - Voi kirjautua sisään nimellään  
-  Ongelmien sattuessa tulee siitä ilmoitus
+Ongelmien sattuessa tulee siitä ilmoitus
   
   #### Kirjautumisen jälkeen
   - Käyttäjä näkee oman pelitilinsä varat
   - Voi pelata peliä  
-  Perusversiossa panosta ei voi muuttaa, vaan se on vakio 1
+Perusversiossa panosta ei voi muuttaa, vaan se on vakio 1
 
 ## Jatkokehitysideoita
 
