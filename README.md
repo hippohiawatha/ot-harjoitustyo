@@ -14,7 +14,8 @@ Sovellus on perinteinen hedelmäpeli. Kehitysvaiheessa olevasta pelistä puuttuu
 
 [Viikko 5](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Viikko5)  
 [Viikko 6](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/viikko6)
-[(Tästä pääsee releaseen, jossa kuvat toimivat)](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Viikko6.1.2)
+[(Tästä pääsee releaseen, jossa kuvat toimivat)](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Viikko6.1.2)  
+[Final](https://github.com/hippohiawatha/ot-harjoitustyo/releases/tag/Final)
 
 ### Komentorivitoiminnot
 
